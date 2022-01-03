@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Bullet bulletPrefab;
+
     public float thrustSpeed = 1f;
     public float turnSpeed = 1f;
 
@@ -32,6 +34,11 @@ public class Player : MonoBehaviour
         {
             turnDirection = 0f;
         }
+
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        {
+            ShootBullet();
+        }
     }
 
     private void FixedUpdate()
@@ -45,5 +52,11 @@ public class Player : MonoBehaviour
         {
             rb.AddTorque(turnDirection * this.turnSpeed);
         }
+    }
+
+    private void ShootBullet()
+    {
+        Bullet bullet = Instantiate(this.bulletPrefab, this.transform.position, this.transform.rotation);
+        bullet.Project(this.transform.up);
     }
 }
