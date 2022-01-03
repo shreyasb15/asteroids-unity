@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68447211}
   - component: {fileID: 68447212}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boundary Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 481115633}
   - component: {fileID: 481115634}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boundary Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 905038427}
   - component: {fileID: 905038428}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boundary Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,6 +411,54 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1168660722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168660724}
+  - component: {fileID: 1168660723}
+  m_Layer: 0
+  m_Name: Asteroid Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1168660723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168660722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a4fd7830de1544b89cbed759a96a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroidPrefab: {fileID: -2431194995181007692, guid: 1660ce9d0d3e5834e95c08a642c89b9b, type: 3}
+  trajectoryVariance: 15
+  spawnRate: 2
+  spawnDistance: 15
+  spawnAmount: 1
+--- !u!4 &1168660724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168660722}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1950786298
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1950786299}
   - component: {fileID: 1950786300}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boundary Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
