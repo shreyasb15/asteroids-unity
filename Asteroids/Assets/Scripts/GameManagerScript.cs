@@ -35,6 +35,19 @@ public class GameManagerScript : MonoBehaviour
     {
         this.explosion.transform.position = asteroid.transform.position;
         this.explosion.Play();
+
+        if(asteroid.size < 0.8f)
+        {
+            this.score += 100;
+        }
+        else if(asteroid.size < 1.2f)
+        {
+            this.score += 50;
+        }
+        else
+        {
+            this.score += 25;
+        }
     }
 
     private void Respawn()
@@ -53,6 +66,9 @@ public class GameManagerScript : MonoBehaviour
 
     private void GameOver()
     {
+        this.lives = 3;
+        this.score = 0;
 
+        Invoke(nameof(Respawn), this.respawnTime);
     }
 }
