@@ -6,13 +6,19 @@ public class GameManagerScript : MonoBehaviour
 {
     public Player player;
 
+    public ParticleSystem explosion;
+
     public float respawnTime = 3f;
     public float respawnInvulnerabilityTime = 3f;
 
     public int lives = 3;
+    public int score = 0;
 
     public void PlayerDied()
     {
+        this.explosion.transform.position = this.player.transform.position;
+        this.explosion.Play();
+
         this.lives--;
 
         if(this.lives <= 0)
@@ -23,6 +29,12 @@ public class GameManagerScript : MonoBehaviour
         {
             Invoke(nameof(Respawn), this.respawnTime);
         }
+    }
+
+    public void AsteroidDestroyed(Asteroids asteroid)
+    {
+        this.explosion.transform.position = asteroid.transform.position;
+        this.explosion.Play();
     }
 
     private void Respawn()
